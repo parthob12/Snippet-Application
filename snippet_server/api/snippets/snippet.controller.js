@@ -21,3 +21,16 @@ const getSnippets = async (req, res) => {
     }
 };
 
+
+
+// get snippet by id 
+const getSnippetsById = async (req, res)=> { 
+    const {params,query} = req;
+    const id = params.id;
+    const includeBookmarks = util.queryToBoolean(query.bookamrks)
+
+    let snippet = null
+  
+        // Inculde bookmarks
+        try {
+            if (includeBookmarks) {

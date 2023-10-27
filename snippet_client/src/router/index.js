@@ -10,3 +10,8 @@ import Profile from '../components/Profile.vue'
 const routes = [{
         path: '/',
         component: Register
+    },
+    {
+        path: '/register',
+        component: Register
+    },

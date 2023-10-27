@@ -7,3 +7,8 @@ const cors = require('cors')
 const mongo = require('./mongo/index.js')
 
 // call the express function which create the express application
+// this allows us to use the full functionality of our express application
+const app = express()
+
+const PORT = 8080
+

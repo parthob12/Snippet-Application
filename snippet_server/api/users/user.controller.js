@@ -29,3 +29,17 @@ const registerUser = async (req, res) => {
 
         const hashed = await bcrypt.hash(password, salt) // hash password 
         const userDoc = new User({
+            ...body,
+            password: hashed
+        })
+        const saved = await userDoc.save()
+
+        // MOngoose -> Vanilla JS
+        const user = saved.toObject()
+
+        delete user.password
+
+        res.json(user)
+
+    } catch (error) {
+        res.status(500).json({
