@@ -52,3 +52,21 @@
           color="indigo"
           v-for="(item, i) in user.snippets"
           style="margin-top: 15px"
+        >
+          <v-card-item>
+            <div>
+              <div class="text-h5 mb-1">{{ item.title }}</div>
+              <div class="text-h7">{{ item.code_snippet }}</div>
+              <br />
+              <br />
+              <div class="text-h7 text-left">
+                <timeago :datetime="item.created" />
+              </div>
+            </div>
+          </v-card-item>
+
+          <v-card-actions>
+            <v-chip>{{ item.programming_languages }}</v-chip>
+          </v-card-actions>
+        </v-card>
+      </div>

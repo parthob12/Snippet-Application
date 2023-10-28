@@ -14,3 +14,11 @@ const SnippetSchema = new mongoose.Schema({
     created: {
         type: Date,
         default: Date.now
+    },
+
+    user_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
+
+    years_experience: Number,

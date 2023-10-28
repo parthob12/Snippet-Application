@@ -26,3 +26,9 @@ export default {
         username: "",
         password: "",
       },
+      error: null,
+    };
+  },
+  methods: {
+    async login() {
+      try {
