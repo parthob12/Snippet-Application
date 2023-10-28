@@ -7,3 +7,6 @@ const verifyToken = (req, res, next) => {
 
     if (!authorization) {
         return res.status(401).json({ error: 'Unauthorzied: no token.' })
+    }
+
+    try {

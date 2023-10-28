@@ -12,3 +12,10 @@ const app = express()
 
 const PORT = 8080
 
+// options object to expose header to the client
+const options = { exposedHeaders: ['Authorization'] };
+
+// middleware to enable cors
+app.use(cors(options));
+
+// parses JSON body in POST and/or PUT request

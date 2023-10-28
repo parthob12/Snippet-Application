@@ -22,3 +22,12 @@ const SnippetSchema = new mongoose.Schema({
     },
 
     years_experience: Number,
+
+    programming_languages: String
+},   {
+    toJSON:{virtuals : true},
+    toObject : {virtuals: true}
+})
+
+SnippetSchema.virtual('bookmarks',{
+    ref: 'Bookmark',

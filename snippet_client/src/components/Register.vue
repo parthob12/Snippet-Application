@@ -16,3 +16,36 @@
             required
           />
           <input
+            type="password"
+            v-model="user.password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="column">
+          <input
+            type="text"
+            v-model="user.programming_languages"
+            placeholder="Programming Languages (Add multiple with commas)"
+          />
+          <input
+            type="text"
+            v-model="user.years_experience"
+            placeholder="Years of Experience"
+          />
+          <button type="submit">Register</button>
+          <p class="login">
+            Already Registered?
+            <router-link to="/login" class="login-link">Login</router-link>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+
+export default {

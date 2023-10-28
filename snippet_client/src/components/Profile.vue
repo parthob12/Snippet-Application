@@ -70,3 +70,31 @@
           </v-card-actions>
         </v-card>
       </div>
+    </v-main>
+  </v-layout>
+</template>
+
+<script>
+import axios from "axios";
+import { ref } from "vue";
+
+export default {
+  data() {
+    return {
+      user: {},
+      cards: ["Today", "Yesterday"],
+      drawer: null,
+      links: [
+        ["mdi-inbox-arrow-down", "Inbox"],
+        ["mdi-send", "Send"],
+        ["mdi-delete", "Trash"],
+        ["mdi-alert-octagon", "Spam"],
+      ],
+    };
+  },
+  async created() {
+    const { id } = this.$route.params;
+
+    try {
+      const response = await axios.get(
+        `http://localhost:8080/users/${id}?snippets=true&bookmarks=true`
