@@ -43,3 +43,24 @@ const registerUser = async (req, res) => {
 
     } catch (error) {
         res.status(500).json({
+            error: error.toString()
+        });
+    }
+}
+// Get user by id 
+const getUsersById = async (req, res) => {
+    const {
+        params,
+        query
+    } = req;
+    const id = params.id;
+
+    // Get boolean from query params strings
+    const includeSnippets = util.queryToBoolean(query.snippets);
+    const includeBookmarks = util.queryToBoolean(query.bookmarks);
+
+    try {
+        const virtuals = [];
+
+        if (includeSnippets) {
+            virtuals.push('snippets');

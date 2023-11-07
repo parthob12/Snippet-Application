@@ -6,3 +6,6 @@ const middleware = require('../middleware/authorization')
 router.get('/', controller.getSnippets);
 
 // GET /snippets/:id
+router.get('/:id', controller.getSnippetsById );
+
+// POST /snippets

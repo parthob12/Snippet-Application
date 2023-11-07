@@ -98,3 +98,14 @@ export default {
     try {
       const response = await axios.get(
         `http://localhost:8080/users/${id}?snippets=true&bookmarks=true`
+      );
+      // Snippet response
+      this.user = response.data;
+
+      this.pic = `https://api.dicebear.com/7.x/initials/svg?seed=${this.user.username}&backgroundColor=27b8c7`;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  methods: {
+    async addSnippet() {

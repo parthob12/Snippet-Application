@@ -49,3 +49,18 @@
 import axios from 'axios';
 
 export default {
+    data() {
+        return {
+            user: {
+                username: '',
+                password: '',
+                years_experience: '',
+                programming_languages: ''
+            },
+            error: null
+        };
+    },
+    methods: {
+        async register() {
+            try {
+                const user = this.user;
