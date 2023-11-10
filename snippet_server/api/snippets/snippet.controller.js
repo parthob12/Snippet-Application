@@ -34,3 +34,9 @@ const getSnippetsById = async (req, res)=> {
         // Inculde bookmarks
         try {
             if (includeBookmarks) {
+                snippet = await Snippet.findById({_id: id}).populate('bookamarks')
+            } else {
+                snippet = await Snippet.findById({ _id: id})
+                
+            }
+

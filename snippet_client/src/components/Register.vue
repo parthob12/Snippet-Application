@@ -64,3 +64,20 @@ export default {
         async register() {
             try {
                 const user = this.user;
+                user.programming_languages = this.user.programming_languages.split(',');
+
+                const response = await axios.post(
+                    'http://localhost:8080/users/register',
+                    user
+                );
+                console.log(response.data);
+
+                // redirect after successful registrations
+                this.$router.push('/login');
+            } catch (error) {
+                console.log(error);
+                this.error = 'username already exists';
+            
+            }
+        }
+    }

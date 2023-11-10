@@ -19,3 +19,11 @@ const routes = [{
         path: '/login',
         component: Login
     },
+    {
+        path: '/profile/:id',
+        component: Profile
+    }
+
+]
+
+

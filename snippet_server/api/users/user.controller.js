@@ -64,3 +64,30 @@ const getUsersById = async (req, res) => {
 
         if (includeSnippets) {
             virtuals.push('snippets');
+        }
+
+        if (includeBookmarks) {
+            virtuals.push('bookmarks');
+        }
+
+        const user = await User.findOne({
+            _id: id
+        }).select('-password').populate(virtuals);
+
+        if (user) {
+            res.json(user);
+        } else {
+            res.status(404).json({
+                error: `No user found by id: ${id}`
+            });
+        }
+    } catch (error) {
+        res.status(500).json({
+            error: error.toString()
+        });
+    }
+}
+
+//update user
+const updateUser = async (req, res) => {
+    const {

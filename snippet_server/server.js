@@ -23,3 +23,4 @@ app.use(express.json())
 
 // require in our resource routes
 const users = require('./api/users/user.routes.js')
+const snippets = require('./api/snippets/snippet.routes.js')

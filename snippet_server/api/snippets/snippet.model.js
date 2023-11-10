@@ -31,3 +31,15 @@ const SnippetSchema = new mongoose.Schema({
 
 SnippetSchema.virtual('bookmarks',{
     ref: 'Bookmark',
+    localField: '_id',
+    foreignField: 'snippet_id'
+
+})
+
+// post hook - remove bookmarks 
+SnippetSchema.post('findOneAndDelete', async function (doc){
+    const Bookmark = mongoose.model('Bookmark')
+    try{
+        await Bookmark.deleteMany({ snippet_id: doc._id })
+        console.log('Bookmarks associated with snippet "deleted" ')
+    }catch(error){
