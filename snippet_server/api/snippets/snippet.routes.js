@@ -9,3 +9,7 @@ router.get('/', controller.getSnippets);
 router.get('/:id', controller.getSnippetsById );
 
 // POST /snippets
+router.post('/', middleware.verifyToken, controller.createSnippet);
+
+// DELETE /snippets/:id
+router.delete('/:id', middleware.verifyToken, controller.deleteSnippet);

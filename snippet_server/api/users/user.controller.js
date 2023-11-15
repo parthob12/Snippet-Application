@@ -91,3 +91,36 @@ const getUsersById = async (req, res) => {
 //update user
 const updateUser = async (req, res) => {
     const {
+        params,
+        body
+    } = req;
+    const id = params.id;
+    try {
+        delete body.created
+        delete body.password
+        const user = await User.findOneAndUpdate({
+            _id: id
+        }, body, {
+            new: true
+        }).select('-password')
+        if (user) {
+            res.json(user)
+        } else {
+            res.status(404).json({
+                error: `No user found by id : ${id}`
+            })
+        }
+
+    } catch (error) {
+        res.status(500).json({
+            error: error.toString()
+        })
+
+    }
+
+}
+
+//login 
+const loginUser = async (req, res) => {
+    const {
+        username,

@@ -14,3 +14,9 @@ const UserSchema = new mongoose.Schema({
         required: true 
     },
 
+    years_experience: Number,
+
+    programming_languages: [String]
+}, {
+    toJSON:{virtuals : true},
+    toObject : {virtuals: true}

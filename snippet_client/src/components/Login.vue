@@ -32,3 +32,15 @@ export default {
   methods: {
     async login() {
       try {
+        const user = this.user;
+        console.log(user);
+        const response = await axios.post(
+          "http://localhost:8080/users/login",
+          user
+        );
+        console.log(response);
+        if (response.status == 200) {
+          const token = response.headers.authorization;
+          console.log(token);
+
+          localStorage.setItem("authToken", token);
