@@ -13,3 +13,4 @@ router.post('/', middleware.verifyToken, controller.createSnippet);
 
 // DELETE /snippets/:id
 router.delete('/:id', middleware.verifyToken, controller.deleteSnippet);
+

@@ -43,3 +43,7 @@ SnippetSchema.post('findOneAndDelete', async function (doc){
         await Bookmark.deleteMany({ snippet_id: doc._id })
         console.log('Bookmarks associated with snippet "deleted" ')
     }catch(error){
+        console.log('Bookmarks associated with snippet "could not be deleted"')
+    }
+
+})
