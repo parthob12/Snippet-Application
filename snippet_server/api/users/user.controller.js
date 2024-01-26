@@ -124,3 +124,40 @@ const updateUser = async (req, res) => {
 const loginUser = async (req, res) => {
     const {
         username,
+        password
+    } = req.body
+    
+    try {
+        const user = await User.findOne({
+            username: username.toLowerCase()
+        })
+        if (!user) {
+            res.status(401).json({
+                error: `Invalid Credentials `
+            });
+            
+        }
+        const authenticated = await bcrypt.compare(password, user.password)
+
+        if (authenticated) {
+            const token = jwt.sign({
+                id: user._id,
+                username: user.username
+            }, config.jwtsecret, {
+                expiresIn: '12h'
+            })
+
+            const authorized = user.toObject()
+            delete authorized.password
+
+            res.header('Authorization', `Bearer ${token}`).json(authorized)
+
+        } else {
+            res.status(401).json({
+                error: 'Invalid Credentials'
+            })
+        }
+
+
+    } catch (error) {
+        console.error(error);

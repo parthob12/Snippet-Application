@@ -3,3 +3,7 @@ const mongoose = require ('mongoose')
 const {username, password, projectname} = require('../config.json')
 const mongoURL = `mongodb+srv://${username}:${password}@cluster0.ofmqtxz.mongodb.net/${projectname}?retryWrites=true&w=majority`
 
+// CONNECT TO MONGO DB
+const connectDB = async ()=>{
+    try{
+     await mongoose.connect(mongoURL)

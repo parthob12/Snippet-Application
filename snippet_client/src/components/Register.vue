@@ -81,3 +81,18 @@ export default {
             }
         }
     }
+};
+</script>
+
+<style scoped>
+.header {
+  text-align: center;
+  color:  violet;
+  padding-bottom: 20px;
+}
+
+h1.header {
+  font-size: 18px;
+}
+
+.two-column-form {

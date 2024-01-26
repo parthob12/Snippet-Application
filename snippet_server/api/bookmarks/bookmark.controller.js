@@ -11,3 +11,5 @@ const createBookmark = async (req, res) => {
         res.json(bookmark);
     } catch (error) {
         res.status(500).json({ error: error.toString() });
+    }
+}

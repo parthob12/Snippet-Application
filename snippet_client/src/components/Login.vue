@@ -44,3 +44,25 @@ export default {
           console.log(token);
 
           localStorage.setItem("authToken", token);
+
+          this.$router.push(`/profile/${response.data._id}`);
+        }
+      } catch (error) {
+        // client is reading from server to set error message
+        this.error = error.response.data.error;
+        console.log(error);
+      }
+    },
+  },
+};
+</script>
+
+<style scoped>
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
