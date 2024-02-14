@@ -10,3 +10,6 @@ const verifyToken = (req, res, next) => {
     }
 
     try {
+        
+        const token = authorization.split(' ').pop()
+

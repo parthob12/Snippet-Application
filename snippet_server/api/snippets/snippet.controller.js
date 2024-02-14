@@ -40,3 +40,17 @@ const getSnippetsById = async (req, res)=> {
                 
             }
 
+            if (snippet) {
+                res.json(snippet)
+            } else {
+                res.status(404).json({error: `No bookmark found for id: ${id}` })
+            }
+
+        } catch (error) {
+            res.status(500).json({error: error.toString()});
+        }
+
+}
+
+// add snippet 
+const createSnippet = async (req, res) => {

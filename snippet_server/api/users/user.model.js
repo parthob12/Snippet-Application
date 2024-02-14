@@ -20,3 +20,12 @@ const UserSchema = new mongoose.Schema({
 }, {
     toJSON:{virtuals : true},
     toObject : {virtuals: true}
+})
+UserSchema.virtual('snippets',{
+    ref: 'Snippet',
+    localField: '_id',
+    foreignField: 'user_id'
+
+})
+
+UserSchema.virtual('bookmarks',{

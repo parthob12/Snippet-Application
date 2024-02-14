@@ -96,3 +96,29 @@ h1.header {
 }
 
 .two-column-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.two-column-form .column {
+  flex: 1;
+  padding: 0 10px;
+}
+
+form {
+  margin: 10px auto;
+}
+
+input {
+  font-family: "Saira Extra Condensed", sans-serif;
+  color: red;
+  margin-bottom: 15px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+button {
+  width: 100%;

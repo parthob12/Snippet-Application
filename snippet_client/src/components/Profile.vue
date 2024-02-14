@@ -109,3 +109,12 @@ export default {
   },
   methods: {
     async addSnippet() {
+      const token = localStorage.getItem("authToken");
+      console.log(token);
+    },
+  },
+};
+</script>
+
+<style>
+body {

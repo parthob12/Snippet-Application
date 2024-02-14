@@ -13,3 +13,8 @@ const createBookmark = async (req, res) => {
         res.status(500).json({ error: error.toString() });
     }
 }
+
+
+const deleteBookmark = async (req, res) => {
+    const {params} = req
+    const id = params.id 
