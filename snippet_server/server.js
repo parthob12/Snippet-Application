@@ -33,3 +33,5 @@ app.use('/bookmarks', bookmarks)
 
 // start the express server
 
+app.listen(PORT, async () => {
+    console.log(`Server is listening on port ${PORT}`)

@@ -54,3 +54,20 @@ const getSnippetsById = async (req, res)=> {
 
 // add snippet 
 const createSnippet = async (req, res) => {
+    const { body } = req;
+  
+    try {
+      const snippetDoc = new Snippet({...body, created: new Date().toISOString() });
+      await snippetDoc.save();
+      res.json(snippetDoc);
+    } catch (error) {
+      res.status(500).json({ error: error.toString() });
+    }
+  }
+
+
+// delete snippet 
+
+const deleteSnippet = async (req,res) =>{
+    const {params} = req
+    const id = params.id 

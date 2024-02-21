@@ -7,3 +7,7 @@ const mongoURL = `mongodb+srv://${username}:${password}@cluster0.ofmqtxz.mongodb
 const connectDB = async ()=>{
     try{
      await mongoose.connect(mongoURL)
+     console.log("Connected to Database Successfully!")
+    }catch(error){
+        console.log(error)
+        process.exit(1)
