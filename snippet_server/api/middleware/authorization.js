@@ -13,3 +13,7 @@ const verifyToken = (req, res, next) => {
         
         const token = authorization.split(' ').pop()
 
+        const verifed = jwt.verify(token, config.jwtsecret)
+        req.user = verifed
+
+        next();

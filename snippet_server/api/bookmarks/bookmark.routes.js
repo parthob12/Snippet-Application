@@ -4,3 +4,6 @@ const middleware = require("../middleware/authorization.js")
 const util = require('../util');
 
 
+// POST /bookmarks
+router.post('/', middleware.verifyToken, controller.createBookmark);
+

@@ -71,3 +71,20 @@ const createSnippet = async (req, res) => {
 const deleteSnippet = async (req,res) =>{
     const {params} = req
     const id = params.id 
+
+    try{
+        const deleted = await Snippet.findOneAndDelete({_id:id}).populate(['bookmarks'])
+
+        if (deleted){
+            res.json({message: 'success', snippet: deleted._id})
+        }else{
+            res.status(404).json({error : `No snippet found by id : ${id}`})
+        }
+
+    }catch{
+        res.status(500).json({error: error.toString()});
+    }
+    
+}
+
+module.exports = {
