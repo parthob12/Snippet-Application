@@ -29,3 +29,7 @@ UserSchema.virtual('snippets',{
 })
 
 UserSchema.virtual('bookmarks',{
+    ref: 'Bookmark',
+    localField: '_id',
+    foreignField: 'user_id'
+
