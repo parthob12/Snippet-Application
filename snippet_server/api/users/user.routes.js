@@ -13,3 +13,6 @@ router.post('/register', controller.registerUser);
 // router.post('/', middleware.verifyToken, controller.updateUser);
 
 router.put('/:id',middleware.verifyToken, controller.updateUser );
+
+// login 
+router.post('/login', controller.loginUser)

@@ -7,3 +7,6 @@ const util = require('../util');
 // POST /bookmarks
 router.post('/', middleware.verifyToken, controller.createBookmark);
 
+// DELETE /bookmarks/:id
+router.delete('/:id',middleware.verifyToken, controller.deleteBookmark);
+
