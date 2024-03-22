@@ -122,3 +122,25 @@ input {
 
 button {
   width: 100%;
+  cursor: pointer;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  color: #f8f8ff;
+}
+
+.login-link {
+  display: flex;
+  justify-content: center;
+  color: #b492ad;
+  text-decoration: underline;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

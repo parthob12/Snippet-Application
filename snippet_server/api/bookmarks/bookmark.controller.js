@@ -18,3 +18,7 @@ const createBookmark = async (req, res) => {
 const deleteBookmark = async (req, res) => {
     const {params} = req
     const id = params.id 
+
+    try{
+        const deleted = await Bookmark.findOneAndDelete({_id:id})
+        if (deleted){

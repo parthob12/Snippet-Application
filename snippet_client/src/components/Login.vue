@@ -84,3 +84,7 @@ label {
 }
 
 input[type="text"],
+input[type="password"] {
+  width: 80%;
+  padding: 6px 6px;
+  border-radius: 4px;
