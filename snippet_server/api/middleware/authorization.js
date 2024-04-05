@@ -19,3 +19,7 @@ const verifyToken = (req, res, next) => {
         next();
     } catch (error) {
         return res.status(401).json({ error: 'Unauthorzied: invalid token.' })
+    }
+}
+
+module.exports = {
