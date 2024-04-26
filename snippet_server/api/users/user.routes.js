@@ -17,3 +17,4 @@ router.put('/:id',middleware.verifyToken, controller.updateUser );
 // login 
 router.post('/login', controller.loginUser)
 
+module.exports = router;

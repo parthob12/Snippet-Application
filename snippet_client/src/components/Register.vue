@@ -144,3 +144,11 @@ button {
   align-items: center;
   text-align: center;
 }
+
+
+input,
+button,
+.login {
+  margin-bottom: 10px;
+}
+</style>

@@ -33,3 +33,5 @@ UserSchema.virtual('bookmarks',{
     localField: '_id',
     foreignField: 'user_id'
 
+})
+module.exports = mongoose.model('User', UserSchema)

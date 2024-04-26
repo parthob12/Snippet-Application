@@ -88,3 +88,8 @@ const deleteSnippet = async (req,res) =>{
 }
 
 module.exports = {
+    getSnippets,
+    getSnippetsById,
+    createSnippet,
+    deleteSnippet
+}

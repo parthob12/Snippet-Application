@@ -35,3 +35,5 @@ app.use('/bookmarks', bookmarks)
 
 app.listen(PORT, async () => {
     console.log(`Server is listening on port ${PORT}`)
+    await mongo.connectDB()
+});

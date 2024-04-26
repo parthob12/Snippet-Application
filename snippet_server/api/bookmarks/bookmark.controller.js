@@ -22,3 +22,17 @@ const deleteBookmark = async (req, res) => {
     try{
         const deleted = await Bookmark.findOneAndDelete({_id:id})
         if (deleted){
+            res.json({message: 'success', bookmark: deleted._id})
+        }else{
+            res.status(404).json({error : `No bookmark found by id : ${id}`})
+        }
+
+    }catch{
+        res.status(500).json({error: error.toString()});
+    }
+}
+
+module.exports = {
+    createBookmark,
+    deleteBookmark
+}

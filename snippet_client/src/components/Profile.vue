@@ -118,3 +118,10 @@ export default {
 
 <style>
 body {
+  display: block !important;
+}
+
+.card {
+  width: 100%;
+}
+</style>

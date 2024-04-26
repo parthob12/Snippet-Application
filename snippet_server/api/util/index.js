@@ -4,3 +4,4 @@ const queryToBoolean = (str) => {
 
 module.exports = {
     queryToBoolean
+};

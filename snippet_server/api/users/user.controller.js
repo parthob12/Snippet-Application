@@ -163,3 +163,12 @@ const loginUser = async (req, res) => {
         console.error(error);
         res.status(500).json({
             error: error.toString()
+        })
+    }
+}
+module.exports = {
+    getUsersById,
+    registerUser,
+    updateUser,
+    loginUser
+};

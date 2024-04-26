@@ -10,3 +10,4 @@ router.post('/', middleware.verifyToken, controller.createBookmark);
 // DELETE /bookmarks/:id
 router.delete('/:id',middleware.verifyToken, controller.deleteBookmark);
 
+module.exports = router;
